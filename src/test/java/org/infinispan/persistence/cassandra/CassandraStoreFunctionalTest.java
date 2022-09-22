@@ -31,7 +31,7 @@ public class CassandraStoreFunctionalTest extends BaseStoreFunctionalTest {
     }
 
     @Override
-    protected PersistenceConfigurationBuilder createCacheStoreConfig(PersistenceConfigurationBuilder persistence, String cacheName, boolean preload) {
+    protected PersistenceConfigurationBuilder createCacheStoreConfig(PersistenceConfigurationBuilder persistence, boolean preload) {
         CassandraStoreConfigurationBuilder cfg = persistence.addStore(CassandraStoreConfigurationBuilder.class).preload(preload);
         cfg.segmented(false);
         cfg.autoCreateKeyspace(true);
